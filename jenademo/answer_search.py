@@ -1,4 +1,3 @@
-
 from py2neo import Graph
 from jenademo.jena_spqrql_endpoint import *
 import json

@@ -11,7 +11,7 @@ class QuestionClassifier:
         self.drug_path = os.path.join(cur_dir, '../dict/drug.txt')
         self.food_path = os.path.join(cur_dir, '../dict/food.txt')
         self.producer_path = os.path.join(cur_dir, '../dict/producer.txt')
-        self.symptom_path = os.path.join(cur_dir, '../dict/symptom.txt')
+        self.symptom_path = os.path.join(cur_dir, '../dict/symptoms.txt')
         self.deny_path = os.path.join(cur_dir, '../dict/deny.txt')
         # 加载特征词
         self.disease_wds= [i.strip() for i in open(self.disease_path, encoding='UTF-8') if i.strip()]

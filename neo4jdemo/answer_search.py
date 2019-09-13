@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 # coding: utf-8
 # File: answer_search.py
-# Author: lhy<lhy_in_blcu@126.com,https://huangyong.github.io>
-# Date: 18-10-5
 
 from py2neo import Graph
 
@@ -13,7 +11,7 @@ class AnswerSearcher:
             host="localhost",
             http_port=7474,
             user="neo4j",
-            password="123456")
+            password="neo4j")
         self.num_limit = 20
 
     '''执行cypher查询，并返回相应结果'''

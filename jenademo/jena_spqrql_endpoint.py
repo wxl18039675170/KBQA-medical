@@ -73,15 +73,15 @@ class JenaFuseki:
 if __name__ == '__main__':
     fuseki = JenaFuseki()
     my_query = """
-PREFIX ldt: <http://www.kg.org/> 
-PREFIX ns1: <ldt:>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-SELECT ?s ?o 
-WHERE {
-?s rdf:type ns1:Disease .
-?s ns1:acompany_with ?o .
-?o ns1:disease_name '失眠' .
-}
+        PREFIX ldt: <http://www.kg.org/> 
+        PREFIX ns1: <ldt:>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        SELECT ?s ?o 
+        WHERE {
+        ?s rdf:type ns1:Disease .
+        ?s ns1:acompany_with ?o .
+        ?o ns1:disease_name '失眠' .
+        }
     """
     result = fuseki.get_sparql_result(my_query)
     # print(result)

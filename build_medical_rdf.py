@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 # coding: utf-8
 # File: MedicalGraph.py
-# Author: lhy<lhy_in_blcu@126.com,https://huangyong.github.io>
-# Date: 18-10-3
 
 import os
 import json
@@ -353,13 +351,13 @@ class MedicalRDF:
     '''导出数据'''
     def export_data(self):
         Drugs, Foods, Checks, Departments, Producers, Symptoms, Diseases, disease_infos, rels_check, rels_recommandeat, rels_noteat, rels_doeat, rels_department, rels_commonddrug, rels_drug_producer, rels_recommanddrug, rels_symptom, rels_acompany, rels_category = self.read_nodes()
-        f_drug = open('drug.txt', 'w+')
-        f_food = open('food.txt', 'w+')
-        f_check = open('check.txt', 'w+')
-        f_department = open('department.txt', 'w+')
-        f_producer = open('producer.txt', 'w+')
-        f_symptom = open('symptoms.txt', 'w+')
-        f_disease = open('disease.txt', 'w+')
+        f_drug = open('./dict/drug.txt', 'w+')
+        f_food = open('./dict/food.txt', 'w+')
+        f_check = open('./dict/check.txt', 'w+')
+        f_department = open('./dict/department.txt', 'w+')
+        f_producer = open('./dict/producer.txt', 'w+')
+        f_symptom = open('./dict/symptoms.txt', 'w+')
+        f_disease = open('./dict/disease.txt', 'w+')
 
         f_drug.write('\n'.join(list(Drugs)))
         f_food.write('\n'.join(list(Foods)))
@@ -383,7 +381,7 @@ class MedicalRDF:
         self.create_graphnodes()
         self.create_graphrels()
         # try:
-        self.g.serialize("test.ttl", format='turtle')
+        self.g.serialize("./data/medical.ttl", format='turtle')
         # except Exception as e:
         #     print(e)
 
@@ -393,4 +391,4 @@ if __name__ == '__main__':
     handler = MedicalRDF()
     # handler.create_graphnodes()
     handler.create_rdf()
-    # handler.export_data()
+    handler.export_data()

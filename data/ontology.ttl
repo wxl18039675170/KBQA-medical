@@ -1,0 +1,206 @@
+@prefix ldt: <http://www.kg.org/> .
+@prefix ns1: <ldt:> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@base <http://www.kg.org/> .
+
+
+rdf:type a rdf:Property ;
+	rdfs:isDefinedBy <http://www.w3.org/1999/02/22-rdf-syntax-ns#> ;
+	rdfs:label "type" ;
+	rdfs:comment "The subject is an instance of a class." ;
+	rdfs:range rdfs:Class ;
+	rdfs:domain rdfs:Resource .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.kg.org/acompany_with
+ns1:acompany_with rdf:type owl:ObjectProperty ;
+               rdfs:domain ns1:Disease ;
+               rdfs:range ns1:Disease .
+
+
+###  http://www.kg.org/belongs_to
+ns1:belongs_to rdf:type owl:ObjectProperty ;
+            rdfs:domain ns1:Department ;
+            rdfs:range ns1:Department .
+
+
+###  http://www.kg.org/common_drug
+ns1:common_drug rdf:type owl:ObjectProperty ;
+             rdfs:domain ns1:Disease ;
+             rdfs:range ns1:Drug .
+
+
+###  http://www.kg.org/cure_department
+ns1:cure_department rdf:type owl:ObjectProperty ;
+                 rdfs:domain ns1:Disease ;
+                 rdfs:range ns1:Department .
+
+
+###  http://www.kg.org/do_eat
+ns1:do_eat rdf:type owl:ObjectProperty ;
+        rdfs:domain ns1:Disease ;
+        rdfs:range ns1:Food .
+
+
+###  http://www.kg.org/drugs_of
+ns1:drugs_of rdf:type owl:ObjectProperty ;
+          rdfs:domain ns1:Producer ;
+          rdfs:range ns1:Drug .
+
+
+###  http://www.kg.org/has_symptom
+ns1:has_symptom rdf:type owl:ObjectProperty ;
+             rdfs:domain ns1:Disease ;
+             rdfs:range ns1:Symptom .
+
+
+###  http://www.kg.org/need_check
+ns1:need_check rdf:type owl:ObjectProperty ;
+            rdfs:domain ns1:Disease ;
+            rdfs:range ns1:Check .
+
+
+###  http://www.kg.org/no_eat
+ns1:no_eat rdf:type owl:ObjectProperty ;
+        rdfs:domain ns1:Disease ;
+        rdfs:range ns1:Food .
+
+
+###  http://www.kg.org/recommand_drug
+ns1:recommand_drug rdf:type owl:ObjectProperty ;
+                rdfs:domain ns1:Disease ;
+                rdfs:range ns1:Drug .
+
+
+###  http://www.kg.org/recommand_eat
+ns1:recommand_eat rdf:type owl:ObjectProperty ;
+               rdfs:domain ns1:Disease ;
+               rdfs:range ns1:Food .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.kg.org/cause
+ns1:cause rdf:type owl:DatatypeProperty ;
+       rdfs:domain ns1:Disease ;
+       rdfs:range xsd:string .
+
+
+###  http://www.kg.org/check_name
+ns1:check_name rdf:type owl:DatatypeProperty ;
+            rdfs:domain ns1:Check ;
+            rdfs:range xsd:string .
+
+
+###  http://www.kg.org/cure_lasttime
+ns1:cure_lasttime rdf:type owl:DatatypeProperty ;
+               rdfs:domain ns1:Disease ;
+               rdfs:range xsd:string .
+
+
+###  http://www.kg.org/cure_way
+ns1:cure_way rdf:type owl:DatatypeProperty ;
+          rdfs:domain ns1:Disease ;
+          rdfs:range xsd:string .
+
+
+###  http://www.kg.org/cured_prob
+ns1:cured_prob rdf:type owl:DatatypeProperty ;
+            rdfs:domain ns1:Disease ;
+            rdfs:range xsd:string .
+
+
+###  http://www.kg.org/department_name
+ns1:department_name rdf:type owl:DatatypeProperty ;
+                 rdfs:domain ns1:Department ;
+                 rdfs:range xsd:string .
+
+
+###  http://www.kg.org/disease_desc
+ns1:disease_desc rdf:type owl:DatatypeProperty ;
+              rdfs:domain ns1:Disease ;
+              rdfs:range xsd:string .
+
+
+###  http://www.kg.org/disease_name
+ns1:disease_name rdf:type owl:DatatypeProperty ;
+              rdfs:domain ns1:Disease ;
+              rdfs:range xsd:string .
+
+
+###  http://www.kg.org/drug_name
+ns1:drug_name rdf:type owl:DatatypeProperty ;
+           rdfs:domain ns1:Drug ;
+           rdfs:range xsd:string .
+
+
+###  http://www.kg.org/easy_get
+ns1:easy_get rdf:type owl:DatatypeProperty ;
+          rdfs:domain ns1:Disease ;
+          rdfs:range xsd:string .
+
+
+###  http://www.kg.org/food_name
+ns1:food_name rdf:type owl:DatatypeProperty ;
+           rdfs:domain ns1:Food ;
+           rdfs:range xsd:string .
+
+
+###  http://www.kg.org/prevent
+ns1:prevent rdf:type owl:DatatypeProperty ;
+         rdfs:domain ns1:Disease ;
+         rdfs:range xsd:string .
+
+
+###  http://www.kg.org/producer_name
+ns1:producer_name rdf:type owl:DatatypeProperty ;
+               rdfs:domain ns1:Producer ;
+               rdfs:range xsd:string .
+
+
+###  http://www.kg.org/sympton_name
+ns1:sympton_name rdf:type owl:DatatypeProperty ;
+              rdfs:domain ns1:Symptom ;
+              rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.kg.org/Check
+ns1:Check rdf:type owl:Class .
+
+
+###  http://www.kg.org/Department
+ns1:Department rdf:type owl:Class .
+
+
+###  http://www.kg.org/Disease
+ns1:Disease rdf:type owl:Class .
+
+
+###  http://www.kg.org/Drug
+ns1:Drug rdf:type owl:Class .
+
+
+###  http://www.kg.org/Food
+ns1:Food rdf:type owl:Class .
+
+
+###  http://www.kg.org/Producer
+ns1:Producer rdf:type owl:Class .
+
+
+###  http://www.kg.org/Symptom
+ns1:Symptom rdf:type owl:Class .

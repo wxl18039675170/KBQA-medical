@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 # coding: utf-8
 # File: chatbot_graph.py
-# Author: lhy<lhy_in_blcu@126.com,https://huangyong.github.io>
-# Date: 18-10-4
 
 from neo4jdemo.question_classifier import *
 from neo4jdemo.question_parser import *
@@ -16,7 +14,7 @@ class ChatBotGraph:
         self.searcher = AnswerSearcher()
 
     def chat_main(self, sent):
-        answer = '您好，我是小勇医药智能助理，希望可以帮到您。如果没答上来，可联系https://liuhuanyong.github.io/。祝您身体棒棒！'
+        answer = '您好，我是小勇医药智能助理，希望可以帮到您。如果没答上来，可联系xx.yy@qq.com。祝您身体棒棒！'
         res_classify = self.classifier.classify(sent)
         if not res_classify:
             return answer
@@ -30,7 +28,7 @@ class ChatBotGraph:
 if __name__ == '__main__':
     handler = ChatBotGraph()
     while 1:
-        question = input('用户:')
+        question = input('User:')
         answer = handler.chat_main(question)
-        print('小勇:', answer)
+        print('Bot:', answer)
 
